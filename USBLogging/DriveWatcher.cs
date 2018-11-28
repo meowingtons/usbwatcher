@@ -1,8 +1,9 @@
 using System;
+using System.ComponentModel;
 using System.Management;
-using USBLogging;
+using System.Runtime.InteropServices;
 
-namespace MonitorDrives
+namespace USBLogging
 {
     public enum EventType
     {
@@ -28,21 +29,31 @@ namespace MonitorDrives
 
         private static void ProcessEvent(object s, EventArrivedEventArgs e)
         {
-            string drivePath = e.NewEvent.Properties["DriveName"].Value.ToString() + "\\";
-            EventType eventType = (EventType)(Convert.ToInt16(e.NewEvent.Properties["EventType"].Value));
+            var diskLetter = e.NewEvent.Properties["DriveName"].Value.ToString();
+            var drivePath = diskLetter + "\\";
+            var eventType = (EventType)(Convert.ToInt16(e.NewEvent.Properties["EventType"].Value));
 
-            string eventName = Enum.GetName(typeof(EventType), eventType);
+            var eventName = Enum.GetName(typeof(EventType), eventType);
 
             Console.WriteLine("{0}: {1} {2}", DateTime.Now, drivePath, eventName);
 
-            if (eventType == EventType.Inserted)
+            switch (eventType)
             {
-                FileWatcher.Run(drivePath);
-            }
+                case EventType.Inserted:
+                    FileWatcher.Run(drivePath);
 
-            if (eventType == EventType.Removed)
-            {
-                FileWatcher.Stop(drivePath);
+                    var driveProps = DriveProperties.GetDeviceProperties(diskLetter);
+
+                    foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(driveProps))
+                    {
+                        var name=descriptor.Name;
+                        var value=descriptor.GetValue(driveProps);
+                        Console.WriteLine("{0}={1}", name, value);
+                    }
+                    break;
+                case EventType.Removed:
+                    FileWatcher.Stop(drivePath);
+                    break;
             }
         }
     }

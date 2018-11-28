@@ -17,6 +17,7 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="USBLogging.csproj" t="IncludeRecursive" />
+        <e p="Utils.cs" t="Include" />
       </e>
       <e p="USBLogging.sln" t="IncludeFlat" />
     </e>
