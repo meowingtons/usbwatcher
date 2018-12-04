@@ -41,7 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DriveProperties.cs" />
-    <Compile Include="EventLogs.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="FileWatcher.cs" />
     <Compile Include="DriveWatcher.cs" />
     <Compile Include="Program.cs" />

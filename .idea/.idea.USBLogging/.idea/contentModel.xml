@@ -9,8 +9,9 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="DriveProperties.cs" t="Include" />
         <e p="DriveWatcher.cs" t="Include" />
-        <e p="EventLogs.cs" t="Include" />
+        <e p="Event.cs" t="Include" />
         <e p="FileWatcher.cs" t="Include" />
+        <e p="Logger.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">

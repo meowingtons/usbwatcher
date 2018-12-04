@@ -1,12 +1,12 @@
 using System;
-using System.Collections.Generic;
 using System.Management;
-using System.Security.Cryptography;
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace USBLogging
 {
     public class DriveProperties
     {
+        //these properties MUST be publicly scoped or other shit breaks. Ignore resharper.
         public string DriveLetter { get; set; }
         public string DeviceId { get; set; }
         public string SerialNumber { get; set; }
