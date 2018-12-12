@@ -15,7 +15,6 @@ namespace MonitorDrives
         static void Main(string[] args)
         {          
             ConfigureEventLog();
-                        
             DriveWatcher.FindExistingDrives();
             
             _watcher = new DriveWatcher();

@@ -84,7 +84,7 @@ namespace USBLogging
             LogFileAction("Drive Error", "Error", "", EventIds.FileError);
         }
 
-        private static void LogFileAction(string diskLetter, string action, string fullPath, EventIds id)
+        public static void LogFileAction(string diskLetter, string action, string fullPath, EventIds id)
         {
             var body = "Action: " + action + Environment.NewLine;
 
@@ -101,13 +101,18 @@ namespace USBLogging
                 body += "DriveLetter: " + Path.GetPathRoot(fullPath) + Environment.NewLine;
             }
 
+            var users = Utils.GetCurrentUsers();
+            body += "CurrentLoggedInUsers: " + string.Join(" ", users.UserNames);
+            
             var entry = new Event
             {              
                 DriveLetter = diskLetter,
                 Action = action,
                 EventId = id,
                 EventType = EventLogEntryType.SuccessAudit,
-                EventBody = body
+                EventBody = body,
+                //LogonIds = users.LogonIds,
+                //UserNames = users.UserNames
             };
 
             Logger.WriteLog(entry);

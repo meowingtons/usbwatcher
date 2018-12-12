@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Management;
-using System.Runtime.InteropServices;
 
 namespace USBLogging
 {
@@ -49,8 +48,6 @@ namespace USBLogging
             switch (eventType)
             {
                 case EventType.Inserted:
-                    FileWatcher.Run(drivePath);
-
                     var driveProps = DriveProperties.GetDeviceProperties(diskLetter);
                     var props = "";
 
@@ -71,6 +68,8 @@ namespace USBLogging
                     entry.EventBody = props;
                     
                     Logger.WriteLog(entry);
+                    
+                    FileWatcher.Run(drivePath);
                     break;
                 case EventType.Removed:
                     FileWatcher.Stop(drivePath);
@@ -82,7 +81,7 @@ namespace USBLogging
         public void StartWatching()
         {
             _watcher.EventArrived += new EventArrivedEventHandler(ProcessEvent);
-            _watcher.Start();
+            _watcher.Start();            
         }
 
         private static void ProcessEvent(object s, EventArrivedEventArgs e)
@@ -92,8 +91,7 @@ namespace USBLogging
             var eventType = (EventType)(Convert.ToInt16(e.NewEvent.Properties["EventType"].Value));
 
             var eventName = Enum.GetName(typeof(EventType), eventType);
-
-            ProcessEventType(diskLetter, drivePath, eventType);
+            ProcessEventType(diskLetter, drivePath, eventType);            
         }
     }
 }

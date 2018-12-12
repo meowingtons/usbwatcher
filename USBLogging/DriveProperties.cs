@@ -20,7 +20,7 @@ namespace USBLogging
         //NOTE: THIS DOES NOT WORK WITH SOFTWARE RAID WHERE PARTITIONS SPAN MULTIPLE DISKS!!!!!!
         //(honestly though, who the fuck is setting up software RAID with USB sticks??)
         public static DriveProperties GetDeviceProperties(string driveLetter)
-        {
+        {          
             using (var partitions = new ManagementObjectSearcher("ASSOCIATORS OF {Win32_LogicalDisk.DeviceID='" +
                                                                  driveLetter +
                                                                  "'} WHERE ResultClass=Win32_DiskPartition"))

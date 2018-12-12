@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.Remoting.Messaging;
 using System.Xml.Serialization;
@@ -29,5 +30,13 @@ namespace USBLogging
         public string EventBody { get; set; }
         public string DriveLetter { get; set; }
         public string Action { get; set; }
+        public List<string> LogonIds { get; set; }
+        public List<string> UserNames { get; set; }
+    }
+
+    public class CurrentUsers
+    {
+        public List<string> LogonIds { get; set; }
+        public List<string> UserNames { get; set; }
     }
 }
