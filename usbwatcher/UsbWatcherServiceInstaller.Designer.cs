@@ -1,4 +1,5 @@
-﻿using System.ServiceProcess;
+﻿using System.Configuration.Install;
+using System.ServiceProcess;
 
 namespace usbwatcher
 {
@@ -52,6 +53,13 @@ namespace usbwatcher
             this.serviceProcessInstaller1,
             this.serviceInstaller1});
 
+            this.serviceInstaller1.AfterInstall += ServiceInstaller_AfterInstall;
+        }
+
+        private void ServiceInstaller_AfterInstall(object sender, InstallEventArgs e)
+        {
+            ServiceController sc = new ServiceController(this.serviceInstaller1.ServiceName);
+            sc.Start();
         }
 
         #endregion
