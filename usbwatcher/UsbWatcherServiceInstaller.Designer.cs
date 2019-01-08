@@ -42,8 +42,9 @@ namespace usbwatcher
             // serviceInstaller1
             // 
             this.serviceInstaller1.Description = "Logs USB-related activities.";
-            this.serviceInstaller1.DisplayName = "USBWatcher";
-            this.serviceInstaller1.ServiceName = "usbwatcher";
+            this.serviceInstaller1.DisplayName = "UsbWatcher";
+            this.serviceInstaller1.ServiceName = "UsbWatcher";
+            this.serviceInstaller1.StartType = ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 
