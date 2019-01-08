@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventLog\EventIds.cs" />
     <Compile Include="UsbWatcherServiceInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
