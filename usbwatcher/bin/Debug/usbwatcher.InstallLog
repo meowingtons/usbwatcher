@@ -1,0 +1,47 @@
+﻿Installing assembly 'C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.InstallLog
+   assemblypath = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe
+Installing service usbwatcher...
+Service usbwatcher has been successfully installed.
+Creating EventLog source usbwatcher in log Application...
+Committing assembly 'C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.InstallLog
+   assemblypath = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe
+Installing assembly 'C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.InstallLog
+   assemblypath = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe
+Installing service usbwatcher...
+Creating EventLog source usbwatcher in log Application...
+Rolling back assembly 'C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.InstallLog
+   assemblypath = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe
+Restoring event log to previous state for source usbwatcher.
+Uninstalling assembly 'C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.InstallLog
+   assemblypath = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe
+Removing EventLog source usbwatcher.
+Service usbwatcher is being removed from the system...
+Service usbwatcher was successfully removed from the system.
+Installing assembly 'C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.InstallLog
+   assemblypath = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe
+Installing service usbwatcher...
+Service usbwatcher has been successfully installed.
+Creating EventLog source usbwatcher in log Application...
+Committing assembly 'C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.InstallLog
+   assemblypath = C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe
