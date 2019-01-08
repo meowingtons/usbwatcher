@@ -1,4 +1,5 @@
-﻿using System.ServiceProcess;
+﻿using System.Configuration.Install;
+using System.ServiceProcess;
 
 namespace usbwatcher
 {
@@ -42,8 +43,9 @@ namespace usbwatcher
             // serviceInstaller1
             // 
             this.serviceInstaller1.Description = "Logs USB-related activities.";
-            this.serviceInstaller1.DisplayName = "USBWatcher";
-            this.serviceInstaller1.ServiceName = "usbwatcher";
+            this.serviceInstaller1.DisplayName = "UsbWatcher";
+            this.serviceInstaller1.ServiceName = "UsbWatcher";
+            this.serviceInstaller1.StartType = ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 
@@ -51,6 +53,13 @@ namespace usbwatcher
             this.serviceProcessInstaller1,
             this.serviceInstaller1});
 
+            this.serviceInstaller1.AfterInstall += ServiceInstaller_AfterInstall;
+        }
+
+        private void ServiceInstaller_AfterInstall(object sender, InstallEventArgs e)
+        {
+            ServiceController sc = new ServiceController(this.serviceInstaller1.ServiceName);
+            sc.Start();
         }
 
         #endregion
