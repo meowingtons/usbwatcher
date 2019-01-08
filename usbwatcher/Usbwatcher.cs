@@ -1,6 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.ServiceProcess;
-using UsbWatcher.EventLog;
+using System.Threading;
 using USBLogging;
 using UsbWatcher.Watchers;
 
@@ -26,15 +27,6 @@ namespace UsbWatcher
 
         protected override void OnStop()
         {
-            var entry = new Event
-            {
-                Action = "UsbWatcher was stopped",
-                EventId = EventIds.ServiceStopped,
-                EventType = EventLogEntryType.SuccessAudit,
-                EventBody = "UsbWatcher service was gracefully stopped"
-            };
-
-            Logger.WriteLog(entry);
         }
     }
 }
