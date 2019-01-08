@@ -50,7 +50,6 @@ namespace USBLogging
         public static void ConfigureEventLog()
         {
             if (EventLog.SourceExists(Logger.EventSource, Logger.EventMachine)) return;
-            Console.WriteLine("Event log source doesn't exist. Creating now.");
             EventLog.CreateEventSource(new EventSourceCreationData(Logger.EventSource, Logger.EventLog));
         }
     }

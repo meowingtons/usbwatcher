@@ -6,3 +6,12 @@ C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.pdb
 C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\obj\Debug\usbwatcher.UsbWatcherServiceInstaller.resources
 C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\obj\Debug\usbwatcher.exe
 C:\Users\aparker1\source\repos\usbwatcher\usbwatcher\obj\Debug\usbwatcher.pdb
+C:\Users\aparker1\Repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe.config
+C:\Users\aparker1\Repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.exe
+C:\Users\aparker1\Repos\usbwatcher\usbwatcher\bin\Debug\usbwatcher.pdb
+C:\Users\aparker1\Repos\usbwatcher\usbwatcher\obj\Debug\usbwatcher.csprojAssemblyReference.cache
+C:\Users\aparker1\Repos\usbwatcher\usbwatcher\obj\Debug\usbwatcher.UsbWatcherServiceInstaller.resources
+C:\Users\aparker1\Repos\usbwatcher\usbwatcher\obj\Debug\usbwatcher.csproj.GenerateResource.cache
+C:\Users\aparker1\Repos\usbwatcher\usbwatcher\obj\Debug\usbwatcher.csproj.CoreCompileInputs.cache
+C:\Users\aparker1\Repos\usbwatcher\usbwatcher\obj\Debug\usbwatcher.exe
+C:\Users\aparker1\Repos\usbwatcher\usbwatcher\obj\Debug\usbwatcher.pdb
