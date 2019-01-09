@@ -99,8 +99,8 @@ namespace UsbWatcher.Watchers
                     var fileInfo = (decimal)(new FileInfo(fullPath).Length) / 1000000;
                     body += "FileSize: " + fileInfo + " MB" + Environment.NewLine;
                 }
-                
-                body += "DriveLetter: " + Path.GetPathRoot(fullPath) + Environment.NewLine;
+
+                body += "DriveLetter: " + diskLetter + Environment.NewLine;
             }
 
             var users = Utils.GetCurrentUsers();

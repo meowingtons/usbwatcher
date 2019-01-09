@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.ServiceProcess;
 using UsbWatcher.EventLog;
 using USBLogging;
@@ -17,11 +18,47 @@ namespace UsbWatcher
 
         protected override void OnStart(string[] args)
         {
-            Utils.ConfigureEventLog();
-            DriveWatcher.FindExistingDrives();
+            try
+            {
+                Utils.ConfigureEventLog();
+                DriveWatcher.FindExistingDrives();
 
-            _watcher = new DriveWatcher();
-            _watcher.StartWatching();
+                _watcher = new DriveWatcher();
+                _watcher.StartWatching();
+            }
+            catch (Exception e)
+            {
+                var entry = new Event
+                {
+                    Action = "UsbWatcher service encountered an error. Attempting to restart.",
+                    EventId = EventIds.OtherError,
+                    EventType = EventLogEntryType.Error,
+                    EventBody = e.Message
+                };
+
+                Logger.WriteLog(entry);
+
+                try
+                {
+                    Utils.ConfigureEventLog();
+                    DriveWatcher.FindExistingDrives();
+
+                    _watcher = new DriveWatcher();
+                    _watcher.StartWatching();
+                }
+                catch
+                {
+                    var secondEntry = new Event
+                    {
+                        Action = "UsbWatcher service had an error restarting. Not attempting to restart.",
+                        EventId = EventIds.OtherError,
+                        EventType = EventLogEntryType.Error,
+                        EventBody = e.Message
+                    };
+
+                    Logger.WriteLog(secondEntry);
+                }
+            }
         }
 
         protected override void OnStop()
