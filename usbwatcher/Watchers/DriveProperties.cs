@@ -49,11 +49,16 @@ namespace UsbWatcher.Watchers
                         foreach (var disk in result)
                         {
                             drive.Size = (double)((ulong)disk.Properties["Size"].Value)/1000000000;
-                            drive.DeviceId = (string)disk.Properties["DeviceID"].Value;
+                            drive.DeviceId = (string)disk.Properties["SerialNumber"].Value;
                             drive.DeviceModel = (string)disk.Properties["Model"].Value;
                             drive.DriveLetter = driveLetter;
                             drive.InterfaceType = (string)disk.Properties["InterfaceType"].Value;
                             drive.SerialNumber = (string)disk.Properties["SerialNumber"].Value;
+
+                            foreach (var prop in disk.Properties)
+                            {
+                                Console.WriteLine(prop.Name + " " + prop.Value);
+                            }
                         }
                         
                         return drive;
