@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{27485C6A-0699-45AF-969D-C14C5038B937}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleApp1</RootNamespace>
-    <AssemblyName>ConsoleApp1</AssemblyName>
+    <RootNamespace>UsbWatcherConsole</RootNamespace>
+    <AssemblyName>UsbWatcherConsole</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
