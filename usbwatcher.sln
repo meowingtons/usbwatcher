@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "usbwatcher", "usbwatcher\us
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "UsbWatcherInstaller", "UsbWatcherInstaller\UsbWatcherInstaller.vdproj", "{9C3B9AF0-FA85-45E8-AA66-5EC1D2CC3978}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsbWatcherConsole", "UsbWatcherConsole\UsbWatcherConsole.csproj", "{27485C6A-0699-45AF-969D-C14C5038B937}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
