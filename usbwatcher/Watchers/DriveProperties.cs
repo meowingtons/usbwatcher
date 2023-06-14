@@ -7,7 +7,7 @@ namespace UsbWatcher.Watchers
 {
     public class DriveProperties
     {
-        //these properties MUST be publicly scoped or other shit breaks. Ignore resharper.
+        //these properties MUST be publicly scoped or other things break. Ignore resharper.
         public string DriveLetter { get; set; }
         public string DeviceId { get; set; }
         public string SerialNumber { get; set; }
@@ -15,11 +15,11 @@ namespace UsbWatcher.Watchers
         public double Size { get; set; }
         public string InterfaceType { get; set; }
 
-        //of course windows does this fucking stupidly, so we have to search for logical disks first. From there,
-        //we can get the associated partitions. Once we have the partitions, we can try to find the disk(s) those
+        //We have to search for logical disks first.
+        //From there, we can get the associated partitions. Once we have the partitions, we can try to find the disk(s) those
         //partitions reside on. Once we have the disk, we can grab all the pertinent properties and return them.
-        //NOTE: THIS DOES NOT WORK WITH SOFTWARE RAID WHERE PARTITIONS SPAN MULTIPLE DISKS!!!!!!
-        //(honestly though, who the fuck is setting up software RAID with USB sticks??)
+        //NOTE: THIS DOES NOT WORK WITH SOFTWARE RAID WHERE PARTITIONS SPAN MULTIPLE DISKS!
+        //(honestly though, who is setting up software RAID with USB sticks??)
         public static DriveProperties GetDeviceProperties(string driveLetter)
         {          
             using (var partitions = new ManagementObjectSearcher("ASSOCIATORS OF {Win32_LogicalDisk.DeviceID='" +

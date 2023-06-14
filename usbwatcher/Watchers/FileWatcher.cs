@@ -113,8 +113,6 @@ namespace UsbWatcher.Watchers
                 EventId = id,
                 EventType = EventLogEntryType.SuccessAudit,
                 EventBody = body,
-                //LogonIds = users.LogonIds,
-                //UserNames = users.UserNames
             };
 
             Logger.WriteLog(entry);
